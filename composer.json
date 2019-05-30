@@ -1,0 +1,56 @@
+{
+    "name": "3615/keybase-proof-bundle",
+    "description": "Keybase Proof Integration with your website",
+    "keywords": ["keybase", "proof", "prove", "identities", "identity", "crypto", "encryption", "keys", "pgp"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Romain Gautier",
+            "homepage": "https://keybase.io/mykiwi",
+            "role": "Lead Developer"
+        },
+        {
+            "name": "Contributors",
+            "homepage": "https://github.com/3615/keybase-proof-bundle/graphs/contributors"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "symfony/console": "^4.0",
+        "symfony/framework-bundle": "^4.0",
+        "symfony/http-client": "^4.3",
+        "symfony/serializer": "^4.0",
+        "twig/twig": "^2.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2",
+        "phpstan/phpstan": "^0.11",
+        "phpstan/phpstan-deprecation-rules": "^0.11",
+        "phpstan/phpstan-doctrine": "^0.11",
+        "phpstan/phpstan-phpunit": "^0.11",
+        "phpstan/phpstan-strict-rules": "^0.11",
+        "symfony/phpunit-bridge": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "💻3615\\Keybase\\ProofBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "💻3615\\Keybase\\ProofBundle\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "SYMFONY_PHPUNIT_VERSION=7.1 simple-phpunit",
+        "code-style": "php-cs-fixer fix",
+        "analyse": "phpstan analyse --level=7 src tests"
+    }
+}

@@ -1,0 +1,16 @@
+language: php
+php:
+    - 7.2
+    - 7.3
+#    - 7.4
+#    - nightly
+
+before_script:
+    - composer global require symfony/flex
+    - composer install
+    - composer test -- install
+
+script:
+    - composer test -- --testdox --coverage-xml=coverage.xml
+    - composer code-style -- --dry-run --diff -vv
+    - composer analyse || true

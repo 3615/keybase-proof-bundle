@@ -1,0 +1,18 @@
+parameters:
+    autoload_directories:
+        - %currentWorkingDirectory%/src
+        - %currentWorkingDirectory%/vendor/bin/.phpunit/phpunit-7.1/src
+    excludes_analyse:
+        - %currentWorkingDirectory%/src/Resources/*
+    ignoreErrors:
+        -
+            message: '#class Symfony\\Component\\Process\\Process not found#i'
+            path: %currentWorkingDirectory%/src/Command/PublishConfigCommand.php
+        - '#Property .* has no typehint specified#i'
+
+includes:
+    - vendor/phpstan/phpstan-strict-rules/rules.neon
+    - vendor/phpstan/phpstan-deprecation-rules/rules.neon
+    - vendor/phpstan/phpstan-phpunit/rules.neon
+    - vendor/phpstan/phpstan-phpunit/extension.neon
+    # - vendor/phpstan/phpstan-doctrine/rules.neon
